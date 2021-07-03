@@ -1,4 +1,3 @@
-import 'package:dev_flutter/chooseCourse.dart';
 import 'package:flutter/material.dart';
 
 class Practice extends StatelessWidget {
@@ -14,14 +13,7 @@ class Practice extends StatelessWidget {
           color: Colors.red,
           child: Text('result'),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return ChooseCourse();
-                },
-              ),
-            );
+            Navigator.pushNamed(context, '/result');
           },
         ),
       ),

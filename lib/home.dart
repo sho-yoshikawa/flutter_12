@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'chooseCourse.dart';
 
 class Home extends StatelessWidget {
   @override

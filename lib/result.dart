@@ -6,13 +6,14 @@ class Result extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text('here is challenge.'),
+        title: Text('result '),
       ),
       body: Center(
         child: RaisedButton(
           color: Colors.blue,
           child: Text('back to select. good work:)'),
           onPressed: () {
+            Navigator.pop(context);
             Navigator.pop(context);
           },
         ),
