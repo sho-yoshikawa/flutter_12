@@ -5,6 +5,7 @@ import 'practice1.dart';
 import 'result.dart';
 import 'tutorial.dart';
 import 'practice2.dart';
+import 'loading.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         '/practice2_2': (context) => Practice2_2(),
         '/practice2_3': (context) => Practice2_3(),
 
+        '/Loading': (context) => Loading(),
         '/result': (context) => Result(),
       },
     );

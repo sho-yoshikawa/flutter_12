@@ -4,6 +4,8 @@ import 'chooseCourse.dart';
 import 'judgement.dart';
 import 'package:draw_graph/draw_graph.dart';
 import 'package:draw_graph/models/feature.dart';
+import 'package:dots_indicator/dots_indicator.dart';
+
 
 int score = 0;
 
@@ -25,7 +27,7 @@ class _Practice1State extends State<Practice1> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          MyScreen(),
+          graphImage(question1_1),
           Row(
             children: [
               Expanded(
@@ -38,6 +40,7 @@ class _Practice1State extends State<Practice1> {
           Container(
             child: nextButton(context, '/practice1_2'),
           ),
+          dotsIndicator(0),
         ],
       ),
     );
@@ -60,7 +63,7 @@ class _Practice1_2State extends State<Practice1_2> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          MyScreen(),
+          graphImage(question1_2),
           Row(
             children: [
               Expanded(
@@ -73,6 +76,7 @@ class _Practice1_2State extends State<Practice1_2> {
           Container(
             child: nextButton(context, '/practice1_3'),
           ),
+          dotsIndicator(1),
         ],
       ),
     );
@@ -95,7 +99,7 @@ class _Practice1_3State extends State<Practice1_3> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          MyScreen(),
+          graphImage(question1_3),
           Row(
             children: [
               Expanded(
@@ -112,6 +116,7 @@ class _Practice1_3State extends State<Practice1_3> {
           Container(
             child: nextButton(context, '/result'),
           ),
+          dotsIndicator(2),
         ],
       ),
     );
@@ -120,7 +125,12 @@ class _Practice1_3State extends State<Practice1_3> {
 
 ElevatedButton chooseOption(String text, int questionNumber, bool color_f) {
   return ElevatedButton(
+
       style: ElevatedButton.styleFrom(
+        side: BorderSide(
+          color: Colors.lightBlue,
+          width: 5,
+        ),
           primary: color_f ? Colors.lightBlue : Colors.white,
           onPrimary: Colors.black,
           shape:
@@ -140,19 +150,33 @@ ElevatedButton chooseOption(String text, int questionNumber, bool color_f) {
       ),
       onPressed: () {
         ft_check(questionNumber);
+        if (30 < questionNumber) {
+          s.stop();
+        }
       });
 }
 
-RaisedButton nextButton(context, path) {
-  return RaisedButton(
-    color: Colors.lightGreenAccent,
-    child: Icon(
-      Icons.arrow_forward_outlined,
-      size: 80,
+ButtonTheme nextButton(context, path) {
+  return ButtonTheme(
+    minWidth: 200,
+    height: 100,
+    child: RaisedButton(
+      color: Colors.lightGreenAccent,
+      child: Icon(
+        Icons.arrow_forward_sharp,
+        size: 70,
+      ),
+      onPressed: () {
+        Navigator.pushNamed(context, path);
+      },
     ),
-    onPressed: () {
-      Navigator.pushNamed(context, path);
-    },
+  );
+}
+
+DotsIndicator dotsIndicator(int num) {
+  return DotsIndicator(
+    dotsCount: 4,
+    position: num.toDouble(),
   );
 }
 
@@ -181,29 +205,53 @@ void ft_check(int questionNumber) {
   }
 }
 
-class MyScreen extends StatelessWidget {
-  final List<Feature> features = [
-    Feature(
-      color: Colors.blue,
-      data: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7],
-    ),
-  ];
+List<Feature> question1_1 = [
+  Feature(
+    color: Colors.blue,
+    data: [0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1],
+  ),
+];
 
+List<Feature> question1_2 = [
+  Feature(
+    color: Colors.blue,
+    data: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7],
+  ),
+];
+
+List<Feature> question1_3 = [
+  Feature(
+    color: Colors.blue,
+    data: [0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+  ),
+];
+
+
+class graphImage extends StatelessWidget {
+  List<Feature> feature = [];
+  graphImage(List<Feature> f) {
+    feature = f;
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        LineGraph(
-          features: features,
-          size: Size(400, 400),
-          labelX: ['0', '1', '2', '3', '4', '5', '6'],
-          labelY: ['1', '2', '3', '4', '5', '6', '7'],
-          graphColor: Colors.black,
-          graphOpacity: 0,
-        ),
+        lineGraph(feature),
       ],
     );
   }
+}
+
+
+LineGraph lineGraph (feature) {
+  return LineGraph(
+    features: feature,
+    size: Size(400, 400),
+    labelX: ['0', '1', '2', '3', '4', '5', '6'],
+    labelY: ['1', '2', '3', '4', '5', '6', '7'],
+    graphColor: Colors.black,
+    graphOpacity: 0,
+  );
 }

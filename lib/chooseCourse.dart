@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'flag.dart';
+import 'dart:async';
+
+Stopwatch s = Stopwatch();
 
 Flag flag = Flag();
 
@@ -33,14 +36,19 @@ class _ChooseCourseState extends State<ChooseCourse> {
   }
 }
 
-RaisedButton courseOption(context, String text, String path) {
-  return RaisedButton(
-    color: Colors.blue,
-    child: courseText(text),
-    onPressed: () {
-      ft_reset();
-      Navigator.pushNamed(context, path);
-    },
+ButtonTheme courseOption(context, String text, String path) {
+  return ButtonTheme(
+    minWidth: 400,
+    height: 100,
+    child: RaisedButton(
+      color: Colors.blue,
+      child: courseText(text),
+      onPressed: () {
+        ft_reset();
+        Navigator.pushNamed(context, path);
+        s.start();
+      },
+    ),
   );
 }
 
@@ -52,6 +60,8 @@ Text courseText(String text) {
 }
 
 void ft_reset() {
+  s.reset();
+
   flag.scoreCheck_f = false;
   flag.no11_f = false;
   flag.no12_f = false;
