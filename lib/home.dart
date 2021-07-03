@@ -16,7 +16,13 @@ class Home extends StatelessWidget {
               child: Text('始める'),
               onPressed: () {
                 Navigator.pushNamed(context, '/choose');
-                //Navigate to Screen 1
+              },
+            ),
+            RaisedButton(
+              color: Colors.blue,
+              child: Text('遊び方'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/tutorial');
               },
             ),
           ],
