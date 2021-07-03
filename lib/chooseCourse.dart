@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'practice1.dart';
 
 class ChooseCourse extends StatelessWidget {
   @override
@@ -11,17 +10,10 @@ class ChooseCourse extends StatelessWidget {
       ),
       body: Center(
         child: RaisedButton(
-          color: Colors.red,
+          color: Colors.blue,
           child: Text('course 1'),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return Practice();
-                },
-              ),
-            );
+            Navigator.pushNamed(context, '/practice1');
           },
         ),
       ),

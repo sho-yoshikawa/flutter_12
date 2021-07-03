@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => Home(),
         '/choose': (context) => ChooseCourse(),
-        '/practice': (context) => Practice(),
+        '/practice1': (context) => Practice(),
         '/result': (context) => Result(),
       },
     );
