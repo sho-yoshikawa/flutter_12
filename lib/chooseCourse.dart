@@ -1,30 +1,7 @@
 import 'package:flutter/material.dart';
+import 'flag.dart';
 
-bool scoreCheck_f = false;
-
-bool no11_f = false;
-bool no12_f = false;
-bool no13_f = false;
-
-bool no21_f = false;
-bool no22_f = false;
-bool no23_f = false;
-
-bool no31_f = false;
-bool no32_f = false;
-bool no33_f = false;
-
-bool no11color_f = false;
-bool no12color_f = false;
-bool no13color_f = false;
-
-bool no21color_f = false;
-bool no22color_f = false;
-bool no23color_f = false;
-
-bool no31color_f = false;
-bool no32color_f = false;
-bool no33color_f = false;
+Flag flag = Flag();
 
 class ChooseCourse extends StatefulWidget {
   @override
@@ -55,29 +32,29 @@ class _ChooseCourseState extends State<ChooseCourse> {
 
 
 void ft_reset() {
-  scoreCheck_f = false;
-  no11_f = false;
-  no12_f = false;
-  no13_f = false;
+  flag.scoreCheck_f = false;
+  flag.no11_f = false;
+  flag.no12_f = false;
+  flag.no13_f = false;
 
-  no21_f = false;
-  no22_f = false;
-  no23_f = false;
+  flag.no21_f = false;
+  flag.no22_f = false;
+  flag.no23_f = false;
 
-  no31_f = false;
-  no32_f = false;
-  no33_f = false;
+  flag.no31_f = false;
+  flag.no32_f = false;
+  flag.no33_f = false;
 
-  no11color_f = false;
-  no12color_f = false;
-  no13color_f = false;
+  flag.no11color_f = false;
+  flag.no12color_f = false;
+  flag.no13color_f = false;
 
-  no21color_f = false;
-  no22color_f = false;
-  no23color_f = false;
+  flag.no21color_f = false;
+  flag.no22color_f = false;
+  flag.no23color_f = false;
 
-  no31color_f = false;
-  no32color_f = false;
-  no33color_f = false;
+  flag.no31color_f = false;
+  flag.no32color_f = false;
+  flag.no33color_f = false;
 }
 

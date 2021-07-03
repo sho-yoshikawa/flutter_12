@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Question {
   bool answer1 = false;
   bool answer2 = false;

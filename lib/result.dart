@@ -34,8 +34,8 @@ class Result extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              print(scoreCheck_f);
-              if (scoreCheck_f == false) {
+              print(flag.scoreCheck_f);
+              if (flag.scoreCheck_f == false) {
                 ft_calc_res();
               }
             },
@@ -64,7 +64,7 @@ class Result extends StatelessWidget {
 }
 
 Text ft_show_score() {
-  if (scoreCheck_f) {
+  if (flag.scoreCheck_f) {
     return Text(
       "$score点！",
       style: TextStyle(fontSize: 30, color: Colors.green),
@@ -78,7 +78,7 @@ Text ft_show_score() {
 }
 
 Text ft_show_comment() {
-  if (scoreCheck_f) {
+  if (flag.scoreCheck_f) {
     return Text(
       ft_get_comment(),
       style: TextStyle(fontSize: 30),
@@ -102,23 +102,23 @@ String ft_get_comment() {
 }
 
 void ft_calc_res() {
-  if (questionBrain.questionBank[0].answer1 == no11_f &&
-      questionBrain.questionBank[0].answer2 == no12_f &&
-      questionBrain.questionBank[0].answer3 == no13_f) {
+  if (questionBrain.questionBank[0].answer1 == flag.no11_f &&
+      questionBrain.questionBank[0].answer2 == flag.no12_f &&
+      questionBrain.questionBank[0].answer3 == flag.no13_f) {
     score = score + 10;
     print("question1 correct!");
   }
-  if (questionBrain.questionBank[1].answer1 == no21_f &&
-      questionBrain.questionBank[1].answer2 == no22_f &&
-      questionBrain.questionBank[1].answer3 == no23_f) {
+  if (questionBrain.questionBank[1].answer1 == flag.no21_f &&
+      questionBrain.questionBank[1].answer2 == flag.no22_f &&
+      questionBrain.questionBank[1].answer3 == flag.no23_f) {
     score = score + 10;
     print("question2 correct!");
   }
-  if (questionBrain.questionBank[2].answer1 == no31_f &&
-      questionBrain.questionBank[2].answer2 == no32_f &&
-      questionBrain.questionBank[2].answer3 == no33_f) {
+  if (questionBrain.questionBank[2].answer1 == flag.no31_f &&
+      questionBrain.questionBank[2].answer2 == flag.no32_f &&
+      questionBrain.questionBank[2].answer3 == flag.no33_f) {
     score = score + 10;
     print("question3 correct!");
   }
-  scoreCheck_f = true;
+  flag.scoreCheck_f = true;
 }

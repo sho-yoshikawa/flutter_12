@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'answer.dart';
 import 'chooseCourse.dart';
+import 'judgement.dart';
 
 int score = 0;
 
@@ -29,9 +30,9 @@ class _Practice1State extends State<Practice1> {
           ),
           Row(
             children: [
-              Expanded(child: chooseOption("y = x^2 - 1", 11, no11color_f)),
-              Expanded(child: chooseOption("y = x - 4", 12, no12color_f)),
-              Expanded(child: chooseOption("y = -x^2 + 3", 13, no13color_f)),
+              Expanded(child: chooseOption("y = x^2 - 1", 11, flag.no11color_f)),
+              Expanded(child: chooseOption("y = x - 4", 12, flag.no12color_f)),
+              Expanded(child: chooseOption("y = -x^2 + 3", 13, flag.no13color_f)),
             ],
           ),
           Container(
@@ -66,9 +67,9 @@ class _Practice1_2State extends State<Practice1_2> {
           ),
           Row(
             children: [
-              Expanded(child: chooseOption("y = x^2 - 1", 21, no21color_f)),
-              Expanded(child: chooseOption("y = x - 4", 22, no22color_f)),
-              Expanded(child: chooseOption("y = -x^2 + 3", 23, no23color_f)),
+              Expanded(child: chooseOption("y = x^2 - 1", 21, flag.no21color_f)),
+              Expanded(child: chooseOption("y = x - 4", 22, flag.no22color_f)),
+              Expanded(child: chooseOption("y = -x^2 + 3", 23, flag.no23color_f)),
             ],
           ),
           Container(
@@ -104,13 +105,13 @@ class _Practice1_3State extends State<Practice1_3> {
           Row(
             children: [
               Expanded(
-                child: chooseOption("y = x^2 - 1", 31, no31color_f),
+                child: chooseOption("y = x^2 - 1", 31, flag.no31color_f),
               ),
               Expanded(
-                child: chooseOption("y = x - 4", 32, no32color_f),
+                child: chooseOption("y = x - 4", 32, flag.no32color_f),
               ),
               Expanded(
-                child: chooseOption("y = -x^2 + 3", 33, no33color_f),
+                child: chooseOption("y = -x^2 + 3", 33, flag.no33color_f),
               ),
             ],
           ),
@@ -166,97 +167,22 @@ void ft_check(int questionNumber) {
     judge_flag1(questionNumber);
 
     print(questionNumber);
-    print(no11_f);
-    print(no12_f);
-    print(no13_f);
+    print(flag.no11_f);
+    print(flag.no12_f);
+    print(flag.no13_f);
   } else if (20 < questionNumber && questionNumber < 30) {
     judge_flag2(questionNumber);
 
     print(questionNumber);
-    print(no21_f);
-    print(no22_f);
-    print(no23_f);
+    print(flag.no21_f);
+    print(flag.no22_f);
+    print(flag.no23_f);
   } else {
     judge_flag3(questionNumber);
 
     print(questionNumber);
-    print(no31_f);
-    print(no32_f);
-    print(no33_f);
-  }
-}
-
-void judge_flag1(int num) {
-  if (num == 11) {
-    no11_f = true;
-    no12_f = false;
-    no13_f = false;
-    no11color_f = true;
-    no12color_f = false;
-    no13color_f = false;
-  } else if (num == 12) {
-    no11_f = false;
-    no12_f = true;
-    no13_f = false;
-    no11color_f = false;
-    no12color_f = true;
-    no13color_f = false;
-  } else {
-    no11_f = false;
-    no12_f = false;
-    no13_f = true;
-    no11color_f = false;
-    no12color_f = false;
-    no13color_f = true;
-  }
-}
-
-void judge_flag2(int num) {
-  if (num == 21) {
-    no21_f = true;
-    no22_f = false;
-    no23_f = false;
-    no21color_f = true;
-    no22color_f = false;
-    no23color_f = false;
-  } else if (num == 22) {
-    no21_f = false;
-    no22_f = true;
-    no23_f = false;
-    no21color_f = false;
-    no22color_f = true;
-    no23color_f = false;
-  } else {
-    no21_f = false;
-    no22_f = false;
-    no23_f = true;
-    no21color_f = false;
-    no22color_f = false;
-    no23color_f = true;
-  }
-}
-
-void judge_flag3(int num) {
-  if (num == 31) {
-    no31_f = true;
-    no32_f = false;
-    no33_f = false;
-    no31color_f = true;
-    no32color_f = false;
-    no33color_f = false;
-  } else if (num == 32) {
-    no31_f = false;
-    no32_f = true;
-    no33_f = false;
-    no31color_f = false;
-    no32color_f = true;
-    no33color_f = false;
-  } else {
-    no31_f = false;
-    no32_f = false;
-    no33_f = true;
-    no31color_f = false;
-    no32color_f = false;
-    no33color_f = true;
+    print(flag.no31_f);
+    print(flag.no32_f);
+    print(flag.no33_f);
   }
 }
