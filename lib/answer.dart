@@ -1,4 +1,8 @@
 class Question {
+  // bool answer = false;
+  // Question(bool a) {
+  //   answer = a;
+  // }
   bool answer1 = false;
   bool answer2 = false;
   bool answer3 = false;
@@ -11,6 +15,9 @@ class Question {
 }
 
 class QuestionBrain {
+  // List<Question> questionBank = [
+  //   Question(true),
+  // ];
   List<Question> questionBank = [
     Question(true, false, false),
     Question(true, false, false),

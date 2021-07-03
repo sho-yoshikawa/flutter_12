@@ -1,5 +1,3 @@
-
-
 class Flag {
   bool scoreCheck_f = false;
 
