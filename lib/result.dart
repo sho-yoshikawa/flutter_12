@@ -43,12 +43,13 @@ class Result extends StatelessWidget {
           RaisedButton.icon(
             icon: Icon(
               Icons.keyboard_return,
+              size: 50,
             ),
             label: Text(
-              "問題を選ぶ",
+              "戻る",
               style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
             ),
-            color: Colors.green,
+            color: Colors.lightBlueAccent,
             textColor: Colors.white,
             onPressed: () {
               Navigator.pop(context);

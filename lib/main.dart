@@ -4,6 +4,7 @@ import 'chooseCourse.dart';
 import 'practice1.dart';
 import 'result.dart';
 import 'tutorial.dart';
+import 'practice2.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,6 +22,11 @@ class MyApp extends StatelessWidget {
         '/practice1': (context) => Practice1(),
         '/practice1_2': (context) => Practice1_2(),
         '/practice1_3': (context) => Practice1_3(),
+
+        '/practice2': (context) => Practice2(),
+        '/practice2_2': (context) => Practice2_2(),
+        '/practice2_3': (context) => Practice2_3(),
+
         '/result': (context) => Result(),
       },
     );

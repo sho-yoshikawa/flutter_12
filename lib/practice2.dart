@@ -9,18 +9,18 @@ int score = 0;
 
 QuestionBrain questionBrain = QuestionBrain();
 
-class Practice1 extends StatefulWidget {
+class Practice2 extends StatefulWidget {
   @override
-  _Practice1State createState() => _Practice1State();
+  _Practice2State createState() => _Practice2State();
 }
 
-class _Practice1State extends State<Practice1> {
+class _Practice2State extends State<Practice2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text('問題 1-1'),
+        title: Text('問題 2-1'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -44,18 +44,18 @@ class _Practice1State extends State<Practice1> {
   }
 }
 
-class Practice1_2 extends StatefulWidget {
+class Practice2_2 extends StatefulWidget {
   @override
-  _Practice1_2State createState() => _Practice1_2State();
+  _Practice2_2State createState() => _Practice2_2State();
 }
 
-class _Practice1_2State extends State<Practice1_2> {
+class _Practice2_2State extends State<Practice2_2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text('問題1-2'),
+        title: Text('問題 2-2'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -79,18 +79,18 @@ class _Practice1_2State extends State<Practice1_2> {
   }
 }
 
-class Practice1_3 extends StatefulWidget {
+class Practice2_3 extends StatefulWidget {
   @override
-  _Practice1_3State createState() => _Practice1_3State();
+  _Practice2_3State createState() => _Practice2_3State();
 }
 
-class _Practice1_3State extends State<Practice1_3> {
+class _Practice2_3State extends State<Practice2_3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text('問題 1-3'),
+        title: Text('問題 2-3'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,

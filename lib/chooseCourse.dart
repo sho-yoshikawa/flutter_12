@@ -13,23 +13,43 @@ class _ChooseCourseState extends State<ChooseCourse> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
-        title: Text('select'),
+        backgroundColor: Colors.blue,
+        title: Text('コース選択'),
       ),
       body: Center(
-        child: RaisedButton(
-          color: Colors.blue,
-          child: Text('course 1'),
-          onPressed: () {
-            ft_reset();
-            Navigator.pushNamed(context, '/practice1');
-          },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            courseOption(context, "コース1", '/practice1'),
+            SizedBox(
+              height: 10,
+            ),
+            courseOption(context, "コース2", '/practice2'),
+            //   courseOption(context, "コース3", '/practice3'),
+          ],
         ),
       ),
     );
   }
 }
 
+RaisedButton courseOption(context, String text, String path) {
+  return RaisedButton(
+    color: Colors.blue,
+    child: courseText(text),
+    onPressed: () {
+      ft_reset();
+      Navigator.pushNamed(context, path);
+    },
+  );
+}
+
+Text courseText(String text) {
+  return Text(
+    text,
+    style: TextStyle(fontSize: 40, color: Colors.white),
+  );
+}
 
 void ft_reset() {
   flag.scoreCheck_f = false;
@@ -57,4 +77,3 @@ void ft_reset() {
   flag.no32color_f = false;
   flag.no33color_f = false;
 }
-
