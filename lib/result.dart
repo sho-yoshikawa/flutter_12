@@ -8,13 +8,27 @@ import 'package:progress_indicators/progress_indicators.dart';
 
 String time = "";
 
-class Result extends StatelessWidget {
+class Result extends StatefulWidget {
+  const Result({Key? key}) : super(key: key);
+
+  @override
+  _ResultState createState() => _ResultState();
+}
+
+class _ResultState extends State<Result> {
+  void onPress() {
+    setState(() {
+      if (flag.scoreCheck_f == false) {
+        ft_calc_res();
+      }
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text('結果発表'),
+        title: Text('結果発表', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -41,11 +55,8 @@ class Result extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              print(flag.scoreCheck_f);
-              if (flag.scoreCheck_f == false) {
-                ft_calc_res();
-              }
-            },
+              onPress();
+          },
           ),
           RaisedButton.icon(
             icon: Icon(

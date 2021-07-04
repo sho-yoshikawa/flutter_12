@@ -20,25 +20,34 @@ class _HomeState extends State<Home> {
                 style: TextStyle(fontSize: 40, color: Colors.black),
               ),
               SizedBox(height: 100,),
-              RaisedButton(
-                color: Colors.red,
-                child: Text('始める', style: TextStyle(fontSize: 30),),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/choose');
-                },
-              ),
+              homeButton(context, '/choose', "始める", Colors.blue),
               SizedBox(height: 20,),
-              RaisedButton(
-                color: Colors.blue,
-                child: Text('遊び方', style: TextStyle(fontSize: 30),),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/tutorial');
-                },
-              ),
+              homeButton(context, '/tutorial', "あそびかた", Colors.red),
             ],
           ),
         ),
       ),
     );
   }
+}
+
+
+ElevatedButton homeButton(context, path, text, color) {
+  return ElevatedButton(
+    onPressed: () {
+      Navigator.pushNamed(context, path);
+    },
+    child: Text(
+      text,
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 30,
+      ),
+    ),
+    style: ElevatedButton.styleFrom(
+      padding: EdgeInsets.all(20),
+      primary: color,
+      onPrimary: Colors.black,
+    ),
+  );
 }

@@ -18,7 +18,19 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => Home(),
+
         '/tutorial': (context) => Tutorial(),
+        '/tutorial2': (context) => Tutorial2(),
+        '/tutorial3': (context) => Tutorial3(),
+        '/tutorial4': (context) => Tutorial4(),
+        '/tutorial5': (context) => Tutorial5(),
+        '/tutorial6': (context) => Tutorial6(),
+        '/tutorial7': (context) => Tutorial7(),
+        '/tutorial8': (context) => Tutorial8(),
+        '/tutorial8_2': (context) => Tutorial8_2(),
+        '/tutorial9': (context) => Tutorial9(),
+        '/tutorial10': (context) => Tutorial10(),
+
         '/choose': (context) => ChooseCourse(),
         '/practice1': (context) => Practice1(),
         '/practice1_2': (context) => Practice1_2(),

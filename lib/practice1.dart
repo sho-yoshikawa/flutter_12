@@ -5,6 +5,7 @@ import 'judgement.dart';
 import 'package:draw_graph/draw_graph.dart';
 import 'package:draw_graph/models/feature.dart';
 import 'package:dots_indicator/dots_indicator.dart';
+import 'dart:core';
 
 
 int score = 0;
@@ -12,11 +13,17 @@ int score = 0;
 QuestionBrain questionBrain = QuestionBrain();
 
 class Practice1 extends StatefulWidget {
+  const Practice1({Key? key}) : super(key: key);
   @override
   _Practice1State createState() => _Practice1State();
 }
 
 class _Practice1State extends State<Practice1> {
+  void onPress(int questionNumber) {
+    setState(() {
+      ft_check(questionNumber);
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,11 +37,9 @@ class _Practice1State extends State<Practice1> {
           graphImage(question1_1),
           Row(
             children: [
-              Expanded(
-                  child: chooseOption("y = x + 1", 11, flag.no11color_f)),
-              Expanded(child: chooseOption("y = x - 4", 12, flag.no12color_f)),
-              Expanded(
-                  child: chooseOption("y = 3 - x", 13, flag.no13color_f)),
+              Expanded(child: chooseOption("y = x + 5", 11, flag.no11color_f, onPress)),
+              Expanded(child: chooseOption("y = x - 4", 12, flag.no12color_f, onPress)),
+              Expanded(child: chooseOption("y = 3 - x", 13, flag.no13color_f, onPress)),
             ],
           ),
           Container(
@@ -48,11 +53,17 @@ class _Practice1State extends State<Practice1> {
 }
 
 class Practice1_2 extends StatefulWidget {
+  const Practice1_2({Key? key}) : super(key: key);
   @override
   _Practice1_2State createState() => _Practice1_2State();
 }
 
 class _Practice1_2State extends State<Practice1_2> {
+  void onPress(int questionNumber) {
+    setState(() {
+      ft_check(questionNumber);
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,11 +77,9 @@ class _Practice1_2State extends State<Practice1_2> {
           graphImage(question1_2),
           Row(
             children: [
-              Expanded(
-                  child: chooseOption("y = -x + 1", 21, flag.no21color_f)),
-              Expanded(child: chooseOption("y = x + 1", 22, flag.no22color_f)),
-              Expanded(
-                  child: chooseOption("y = -x - 1", 23, flag.no23color_f)),
+              Expanded(child: chooseOption("y = x + 1", 21, flag.no21color_f, onPress)),
+              Expanded(child: chooseOption("y = -x + 1", 22, flag.no22color_f, onPress)),
+              Expanded(child: chooseOption("y = -x - 1", 23, flag.no23color_f, onPress)),
             ],
           ),
           Container(
@@ -84,11 +93,17 @@ class _Practice1_2State extends State<Practice1_2> {
 }
 
 class Practice1_3 extends StatefulWidget {
+  const Practice1_3({Key? key}) : super(key: key);
   @override
   _Practice1_3State createState() => _Practice1_3State();
 }
 
 class _Practice1_3State extends State<Practice1_3> {
+  void onPress(int questionNumber) {
+    setState(() {
+      ft_check(questionNumber);
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,13 +118,13 @@ class _Practice1_3State extends State<Practice1_3> {
           Row(
             children: [
               Expanded(
-                child: chooseOption("y = -1x -10", 31, flag.no31color_f),
+                child: chooseOption("y = x + 3", 31, flag.no31color_f, onPress),
               ),
               Expanded(
-                child: chooseOption("y = 10x - 10", 32, flag.no32color_f),
+                child: chooseOption("y = x - 3", 32, flag.no32color_f, onPress),
               ),
               Expanded(
-                child: chooseOption("y = 1x + 1", 33, flag.no33color_f),
+                child: chooseOption("y = -x + 3", 33, flag.no33color_f, onPress),
               ),
             ],
           ),
@@ -123,14 +138,13 @@ class _Practice1_3State extends State<Practice1_3> {
   }
 }
 
-ElevatedButton chooseOption(String text, int questionNumber, bool color_f) {
+ElevatedButton chooseOption(String text, int questionNumber, bool color_f, Function onPress) {
   return ElevatedButton(
-
       style: ElevatedButton.styleFrom(
-        side: BorderSide(
-          color: Colors.lightBlue,
-          width: 5,
-        ),
+          side: BorderSide(
+            color: Colors.lightBlue,
+            width: 5,
+          ),
           primary: color_f ? Colors.lightBlue : Colors.white,
           onPrimary: Colors.black,
           shape:
@@ -149,12 +163,17 @@ ElevatedButton chooseOption(String text, int questionNumber, bool color_f) {
         ),
       ),
       onPressed: () {
-        ft_check(questionNumber);
-        if (30 < questionNumber) {
-          s.stop();
-        }
-      });
+        onPress(questionNumber);
+      },
+
+       );
 }
+
+// ft_check(questionNumber);
+// if (30 < questionNumber) {
+//   s.stop();
+// }
+
 
 ButtonTheme nextButton(context, path) {
   return ButtonTheme(
