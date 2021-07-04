@@ -23,7 +23,7 @@ class _ChooseCourseState extends State<ChooseCourse> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            courseOption(context, "コース1", '/practice1'),
+            courseOption(context, "チュートリアル", '/practice1'),
             SizedBox(
               height: 10,
             ),
