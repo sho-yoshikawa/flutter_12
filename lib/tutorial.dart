@@ -125,7 +125,7 @@ class Tutorial3 extends StatelessWidget {
             children: [
               Image.asset('images/usagi.png', width: 50,),
               Text(
-                '(3,2)はXに３を入れて「ある式」を計算するとYが２になるという意味だよ',
+                '(3,2)はXに３を入れて,ある式を計算するとYが２になるよ',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
             ],

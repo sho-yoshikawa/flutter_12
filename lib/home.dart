@@ -16,8 +16,8 @@ class _HomeState extends State<Home> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                "タイトル",
-                style: TextStyle(fontSize: 40, color: Colors.black),
+                "脱！グラフぎらい！",
+                style: TextStyle(fontSize: 40, color: Colors.white, backgroundColor: Colors.lightBlue),
               ),
               SizedBox(height: 100,),
               homeButton(context, '/choose', "始める", Colors.blue),
